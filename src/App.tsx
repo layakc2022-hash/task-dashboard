@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useRef } from "react";
+import { useState, useMemo, useRef } from "react";
 
 type Status = "todo" | "inprogress" | "review" | "done";
 type Priority = "low" | "medium" | "high" | "critical";
@@ -42,17 +42,17 @@ export default function App() {
   const [filterPriority, setFilterPriority] = useState<Priority | "all">("all");
 
   // mock collaboration
-  const [activeUsers, setActiveUsers] = useState<{ user: string; taskId: number }[]>([]);
+  // const [activeUsers, setActiveUsers] = useState<{ user: string; taskId: number }[]>([]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveUsers(users.slice(0, 3).map(u => ({
-        user: u,
-        taskId: Math.floor(Math.random() * tasks.length)
-      })));
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [tasks]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setActiveUsers(users.slice(0, 3).map(u => ({
+  //       user: u,
+  //       taskId: Math.floor(Math.random() * tasks.length)
+  //     })));
+  //   }, 2000);
+  //   return () => clearInterval(interval);
+  // }, [tasks]);
 
   const generateTasks = () => {
     const statuses: Status[] = ["todo", "inprogress", "review", "done"];
@@ -129,12 +129,12 @@ export default function App() {
   const visibleRows = sortedTasks.slice(startIndex, startIndex + visibleCount);
 
   // TIMELINE
-  const dayWidth = 20;
-  const monthStart = new Date();
-  monthStart.setDate(1);
+  // const _dayWidth = 20;
+  // const monthStart = new Date();
+  // monthStart.setDate(1);
 
-  const getOffset = (date: string) =>
-    (new Date(date).getTime() - monthStart.getTime()) / (1000 * 3600 * 24);
+  // const getOffset = (date: string) =>
+  //   (new Date(date).getTime() - monthStart.getTime()) / (1000 * 3600 * 24);
 
   return (
     <div style={{ padding: 20, fontFamily: "sans-serif" }}>
