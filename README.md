@@ -75,7 +75,7 @@ With more time, I would:
 
 ## 📸 Lighthouse Report
 
-![Lighthouse Report](./lighthouse.png)
+![Lighthouse Report]("C:\Users\laya_\OneDrive\Pictures\Screenshots\lighthouse.png")
 ---
 
 ## 📝 Conclusion
